@@ -5,7 +5,11 @@ const Header = () => {
   return (
     <div>
       <div>
-        Header
+        <button>Home</button>
+        <button>About</button>
+        <button>Portfolio</button>
+        <button>Services</button>
+        <button>Contact</button>
       </div>
     </div>
   )
