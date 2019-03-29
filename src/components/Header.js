@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const Header = () => {
   return (
-    <div>
+  
       <div>
         <button>Home</button>
         <button>About</button>
@@ -11,7 +11,6 @@ const Header = () => {
         <button>Services</button>
         <button>Contact</button>
       </div>
-    </div>
   )
 }
 
