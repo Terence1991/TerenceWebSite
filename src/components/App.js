@@ -1,13 +1,17 @@
 import React from 'react'
 import Header from './Header.js'
+import styled from 'styled-components'
 
+const AppWrapper = styled.div`
+  font-family: 'Roboto', sans-serif;
+`
 const App = () => {
   return (
-  <div>
+  <AppWrapper>
     <div>
       <Header/>
     </div>
-  </div> 
+  </AppWrapper> 
   )
 }
 
