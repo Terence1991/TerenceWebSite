@@ -1,7 +1,10 @@
 import React from 'react';
 import Header from './Header.js';
 import Contact from '../screens/Contact.js';
-import Portfolio from '../screens/'
+import Portfolio from '../screens/Portfolio.js'
+import About from '../screens/About.js'
+import Services from '../screens/Services.js'
+
 
 import {BrowserRouter, Route} from 'react-router-dom';
 import styled from 'styled-components';
@@ -19,10 +22,8 @@ const App = () => {
   return (
   <AppWrapper> 
     <BrowserRouter>
-    <Route path="/contact" exact component={Contact}/>
-    <Route path="/portfolio" exact component={Portfolio}/>
-    </BrowserRouter> 
-    <Header/>
+     <Header/>
+    </BrowserRouter>
     <Contact/> 
   </AppWrapper>
   )
