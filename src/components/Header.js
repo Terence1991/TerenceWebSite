@@ -6,7 +6,7 @@ import About from '../screens/About.js'
 import Services from '../screens/Services.js'
 
 class Header extends React.Component {
-  state = {url: ''}
+  state = {url: '/about'}
 
  handleClickAbout = () => {
    let { history } = this.props
@@ -40,7 +40,7 @@ class Header extends React.Component {
     })
   } 
 
-  handleClickContact = () => {
+  handleClickContact = (url) => {
     let { history } = this.props
     history.push({
       pathname: '/contact',
@@ -57,7 +57,7 @@ render() {
       <Route path="/about" exact component={About}/>
       <Route path='/services' exact component={Services}/>
       <button onClick={this.handleClickHome.bind(this)}>Home</button>
-      <button onClick={this.handleClickAbout.bind(this)}>About</button>
+      <button onClick={this.handleClickAbout.bind(this.state.url)}>About</button>
       <button onClick={this.handleClickPortfolio.bind(this)}>Portfolio</button>
       <button onClick={this.handleClickServices.bind(this)}>Services</button>
       <button onClick={this.handleClickContact.bind(this)}>Contact</button> 

@@ -6,7 +6,7 @@ import About from '../screens/About.js'
 import Services from '../screens/Services.js'
 
 
-import {BrowserRouter, Route} from 'react-router-dom';
+import {BrowserRouter} from 'react-router-dom';
 import styled from 'styled-components';
 
 const AppWrapper = styled.div`
