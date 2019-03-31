@@ -1,18 +1,52 @@
 import React from 'react'
-import {withRouter, BrowserRouter, Route} from "react-router-dom"
+import {BrowserRouter, withRouter ,Route} from "react-router-dom"
 import Contact from '../screens/Contact.js';
 import Portfolio from '../screens/Portfolio.js'
 import About from '../screens/About.js'
 import Services from '../screens/Services.js'
-import PropTypes from 'prop-types'
-import { createBrowserHistory } from 'history';
 
 class Header extends React.Component {
   state = {url: ''}
 
- handleClick = () => {
-    this.state.history.pushState(null, '/about');
+ handleClickAbout = () => {
+   let { history } = this.props
+     history.push({
+       pathname: "/about", 
+       search:  null
+     })
   }
+
+  handleClickHome = () => {
+    let { history } = this.props
+    history.push({
+      pathname: '/',
+      search: null
+    })
+  }
+
+  handleClickPortfolio = () => {
+    let { history } = this.props
+    history.push({
+      pathname: '/portfolio',
+      search: null
+    })
+  }
+
+  handleClickServices = () => {
+    let { history } = this.props
+    history.push({
+      pathname: '/services',
+      search: null
+    })
+  } 
+
+  handleClickContact = () => {
+    let { history } = this.props
+    history.push({
+      pathname: '/contact',
+      search: null
+    })
+  } 
 
 render() {
   console.log(this.state)
@@ -22,13 +56,13 @@ render() {
       <Route path="/portfolio" exact component={Portfolio}/>
       <Route path="/about" exact component={About}/>
       <Route path='/services' exact component={Services}/>
-       {/* <button onClick={this.handleClick('/')}>Home</button> */}
-      <button onClick={this.handleClick}>About</button>
-      {/* <button onClick={this.handleClick('/portfolio')}>Portfolio</button>
-      <button onClick={this.handleClick('/services')}>Services</button>
-      <button onClick={this.handleClick('/contact')}>Contact</button> */}
+      <button onClick={this.handleClickHome.bind(this)}>Home</button>
+      <button onClick={this.handleClickAbout.bind(this)}>About</button>
+      <button onClick={this.handleClickPortfolio.bind(this)}>Portfolio</button>
+      <button onClick={this.handleClickServices.bind(this)}>Services</button>
+      <button onClick={this.handleClickContact.bind(this)}>Contact</button> 
     </BrowserRouter> 
   )
   }
 }
-export default createBrowserHistory(Header);
+export default withRouter(Header);
