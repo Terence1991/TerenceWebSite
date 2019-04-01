@@ -6,7 +6,11 @@ import About from '../screens/About.js'
 import Services from '../screens/Services.js'
 
 class Header extends React.Component {
-  state = {url: '/about'}
+  state = {url: '/about', isPagedChanged: false}
+
+  componentDidMount() {
+   this.setState({isPagedChanged: true}) 
+  }
 
  handleClickAbout = () => {
    let { history } = this.props
@@ -14,14 +18,19 @@ class Header extends React.Component {
        pathname: "/about", 
        search:  null
      })
-  }
-
+     setTimeout(function(){
+      window.location.reload(1);
+   }, 1000);
+}
   handleClickHome = () => {
     let { history } = this.props
     history.push({
       pathname: '/',
       search: null
     })
+    setTimeout(function(){
+      window.location.reload(1);
+   }, 1000);
   }
 
   handleClickPortfolio = () => {
@@ -30,6 +39,9 @@ class Header extends React.Component {
       pathname: '/portfolio',
       search: null
     })
+    setTimeout(function(){
+      window.location.reload(1);
+   }, 1000);
   }
 
   handleClickServices = () => {
@@ -38,6 +50,9 @@ class Header extends React.Component {
       pathname: '/services',
       search: null
     })
+    setTimeout(function(){
+      window.location.reload(1);
+   }, 1000);
   } 
 
   handleClickContact = (url) => {
@@ -46,6 +61,9 @@ class Header extends React.Component {
       pathname: '/contact',
       search: null
     })
+    setTimeout(function(){
+      window.location.reload(1);
+   }, 1000);
   } 
 
 render() {
