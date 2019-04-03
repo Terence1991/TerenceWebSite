@@ -1,9 +1,6 @@
 import React from 'react';
 import Header from './Header.js';
 import Contact from '../screens/Contact.js';
-import Portfolio from '../screens/Portfolio.js'
-import About from '../screens/About.js'
-import Services from '../screens/Services.js'
 
 
 import {BrowserRouter} from 'react-router-dom';
@@ -23,8 +20,7 @@ const App = () => {
   <AppWrapper> 
     <BrowserRouter>
      <Header/>
-    </BrowserRouter>
-    <Contact/> 
+    </BrowserRouter> 
   </AppWrapper>
   )
 }
